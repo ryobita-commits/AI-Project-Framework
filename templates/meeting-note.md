@@ -1,59 +1,59 @@
-# Meeting Note
+# 会議メモ テンプレート
 
-## Date
+## 日付
 
 YYYY-MM-DD
 
-## Topic
+## テーマ
 
-Short decision topic.
+短い議題名
 
-## Participants
+## 参加者
 
 - moderator:
 - advisors:
 - humans:
 
-## Decision Question
+## 判断したい問い
 
-What is being decided.
+今回の会議で何を決めるか
 
-## Shared Goal
+## 共通目標
 
-What all participants are trying to optimize for.
+参加者全員が何を最適化したいか
 
-## Options Considered
+## 検討した選択肢
 
-- option
+- 選択肢
 
-## Analyst Position
+## Analyst の見解
 
-Facts, constraints, comparisons, and tradeoffs.
+事実、制約、比較、トレードオフ
 
-## Advocate Position
+## Advocate の見解
 
-Best upside, momentum, and execution path.
+伸ばせる点、前向きな進め方、実行しやすい案
 
-## Critic Position
+## Critic の見解
 
-Risks, weak assumptions, missing evidence, and failure modes.
+リスク、弱い前提、足りない根拠、失敗パターン
 
 ## Human Input
 
-Human constraints, preferences, or decisions.
+人間が持ち込んだ制約、意図、判断
 
-## Decision
+## 決定
 
-Approved direction.
+採用した方針
 
-## Rationale
+## 判断理由
 
-Why this option was chosen.
+なぜこの案を選んだか
 
-## Risks
+## リスク
 
-- risk
+- リスク
 
-## Next Actions
+## 次アクション
 
-- action
+- アクション

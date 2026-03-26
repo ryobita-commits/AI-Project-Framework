@@ -1,12 +1,12 @@
-# Initial Questions: Planning Workshop
+# 初期質問: planning_workshop
 
-1. What decision or alignment problem is this workshop meant to solve?
-2. Who are the participants?
-3. What outputs should the meeting produce?
-4. What constraints or deadlines matter?
-5. What background information already exists?
-6. Which advisor perspectives are most important?
-7. What topics are explicitly out of scope?
-8. How will success be judged after the meeting?
-9. What decisions can be made in the room versus escalated later?
-10. What is still unknown?
+1. この会議で何を決めたいですか。
+2. 参加者は誰ですか。
+3. 会議の成果物として何を残したいですか。
+4. 期限や時間的制約はありますか。
+5. 既にある前提資料や背景情報は何ですか。
+6. 特に重視したい視点は何ですか。
+7. 今回の会議で扱わないことは何ですか。
+8. 会議成功の定義は何ですか。
+9. その場で決められることと、後で承認が必要なことは何ですか。
+10. まだ不明なことは何ですか。
