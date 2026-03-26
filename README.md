@@ -1,44 +1,45 @@
 # AI Project Development Framework
 
-This repository is a starter layout for AI-assisted project development with explicit role ownership, model routing, discussion advisors, and feedback-driven improvement loops.
+AI を使ったプロジェクト推進を、役割分担、正本管理、改善ループ込みで回すための汎用フレームワークです。
 
-## Purpose
+## 目的
 
-The framework is designed so each AI agent can rebuild shared context from repository files instead of relying on memory.
+各 AI が記憶ではなくリポジトリ上のファイルから共通認識を再構築し、同じ前提で企画、設計、実装、テスト、レビュー、改善を進められる状態を作ります。
 
-## Source Of Truth
+## 正本の優先順位
 
-When files disagree, resolve them in this order:
+情報が衝突した場合は、以下の順に優先します。
 
 1. `PROJECT.md`
 2. `CURRENT_STATE.md`
-3. approved files under `plans/change-requests/`
-4. files under `docs/decisions/`
-5. role contracts under `agents/`
-6. feature specs under `specs/features/`
-7. session logs under `worklog/`
+3. `plans/change-requests/` 配下の承認済み変更
+4. `docs/decisions/` 配下の意思決定記録
+5. `agents/` 配下の role contract
+6. `specs/features/` 配下の作業単位仕様
+7. `worklog/` 配下の作業記録
 
-See `governance/source-of-truth.md` for the full policy.
+詳細は `governance/source-of-truth.md` を参照します。
 
-## Key Files
+## 主なファイル
 
-- `PROJECT.md`: what the project is and is not
-- `CURRENT_STATE.md`: current progress, priorities, blockers, active work
-- `STATUS.md`: concise human-readable status dashboard
-- `FRAMEWORK_STATUS.md`: framework-level readiness summary
-- `WORKFLOW.md`: operating rules for planning, execution, feedback, and release
-- `config/agents.yaml`: maps each role to a provider, model, reasoning level, and permissions
-- `config/authority.yaml`: defines which issues can be auto-approved by PM AI and which require human approval
-- `config/workflows.yaml`: defines the detect-to-fix feedback loop across planning, implementation, testing, and release
-- `agents/AGENTS_INDEX.md`: role catalog including PM advisors for planning meetings
-- `bootstrap/project-type-router.md`: selects the right initial question set for the project type
-- `bootstrap/output-templates/`: recommended first live files for each project type
-- `samples/`: concrete examples for project bootstrap
-- `REPOSITORY_SETUP.md`: GitHub publishing checklist and local setup steps
+- `PROJECT.md`: 何を作るか、何を作らないか
+- `CURRENT_STATE.md`: 現在の進捗、優先事項、ブロッカー
+- `STATUS.md`: 人が素早く見るための要約ステータス
+- `FRAMEWORK_STATUS.md`: フレームワーク自体の整備状況
+- `WORKFLOW.md`: 企画、実行、改善、承認の運用ルール
+- `config/agents.yaml`: 役割ごとのモデル、権限、read/write 範囲
+- `config/authority.yaml`: PM AI が自律承認できる範囲
+- `config/workflows.yaml`: 課題検知から修正完了までの流れ
+- `agents/AGENTS_INDEX.md`: 役割一覧
+- `bootstrap/project-type-router.md`: 最初の project type 判定
+- `bootstrap/questions/`: project type ごとの初期質問
+- `bootstrap/output-templates/`: project type ごとの最初の live ファイル構成
+- `templates/`: 会議メモ、改善提案、テスト計画書などのテンプレート
+- `samples/`: `_sample` として使う具体例
 
-## Operating Principle
+## 作業開始時の参照順
 
-Every agent should reconstruct context in this order before acting:
+各 AI は、作業前に原則として以下の順で参照します。
 
 1. `README.md`
 2. `PROJECT.md`
@@ -52,40 +53,55 @@ Every agent should reconstruct context in this order before acting:
 10. `agents/AGENTS_INDEX.md`
 11. `agents/shared/conventions.md`
 12. `agents/shared/definition-of-done.md`
-13. its own role contract under `agents/`
+13. 自分の role contract
 
-## Meeting Mode
+## PM 会議モード
 
-Planning and product meetings can include:
+企画や重要判断の場では、以下の構成で会議できます。
 
-- a PM AI that moderates, structures decisions, and owns the outcome
-- advisor AIs with distinct personalities and analysis styles
-- one or more human participants
+- `pm_moderator`: 司会、論点整理、結論記録
+- `pm_critic`: 批判的視点、リスク発見
+- `pm_advocate`: 推進視点、前向きな打ち手整理
+- `pm_analyst`: 根拠整理、比較、統合判断
+- human: 人間の意図、制約、最終判断
 
-The default advisor set is:
+常時複数 AI で回す必要はありません。重要判断時だけ使う運用でも成立します。
 
-- `pm_critic`: critical and risk-seeking
-- `pm_advocate`: opportunity-seeking and forward-driving
-- `pm_analyst`: evidence-driven and integrative
+## bootstrap の使い方
 
-See `agents/pm/` and `WORKFLOW.md` for the discussion protocol.
+この framework は、少なくとも以下の project type に対応します。
 
-## Generic Bootstrap
+- `game`
+- `web_app`
+- `mobile_app`
+- `test_plan`
+- `planning_workshop`
+- `sales_plan`
+- `general_project`
 
-This framework can be used for games, apps, planning workshops, sales planning, and general projects.
+開始手順は以下です。
 
-Start with:
+1. `bootstrap/project-type-router.md` で project type を判定する
+2. 対応する `bootstrap/questions/` の質問に答える
+3. 回答を `bootstrap/initial-answers.md` にまとめる
+4. `bootstrap/session-bootstrap_template.md` に沿って canonical file を作る
+5. 必要なら `samples/` の `_sample` ファイルを見本として使う
 
-1. `bootstrap/project-type-router.md`
-2. the matching question file in `bootstrap/questions/`
-3. `bootstrap/initial-answers.md`
-4. `bootstrap/session-bootstrap_template.md`
-5. `PROJECT.md`
-6. a sample file under `samples/` if an example is useful
+## test_plan 向け追加物
 
-## Publishing
+テスト計画書作成案件向けに、以下を正式追加しています。
 
-Before publishing to GitHub, review:
+- `bootstrap/questions/test_plan.md`
+- `bootstrap/output-templates/test_plan.md`
+- `templates/test-plan-outline.md`
+- `templates/test-plan-document.md`
+- `templates/system-test-spec.md`
+- `samples/test-plan-document_sample.md`
+- `samples/test-plan-outline_sample.md`
+
+## 公開前確認
+
+GitHub に公開する前に、以下を確認してください。
 
 1. `FRAMEWORK_STATUS.md`
 2. `REPOSITORY_SETUP.md`

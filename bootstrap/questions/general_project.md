@@ -1,12 +1,12 @@
-# Initial Questions: General Project
+# 初期質問: general_project
 
-1. What are you trying to create or achieve?
-2. Who is the intended user, customer, or stakeholder?
-3. What is the main outcome or deliverable?
-4. What is the first milestone or MVP?
-5. What constraints matter most?
-6. What technology or operating assumptions already exist?
-7. What is explicitly out of scope?
-8. What metrics define success?
-9. What decisions are still open?
-10. What risks are already known?
+1. 何を作る、または達成したいですか。
+2. 主な利用者、顧客、関係者は誰ですか。
+3. 主成果物は何ですか。
+4. 最初のマイルストーンまたは初稿は何ですか。
+5. 最も重要な制約は何ですか。
+6. 既に決まっている技術前提や運用前提はありますか。
+7. 今回の対象外は何ですか。
+8. 成功をどう判断しますか。
+9. まだ未決定の重要事項は何ですか。
+10. 現時点でわかっているリスクは何ですか。

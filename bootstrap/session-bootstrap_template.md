@@ -1,51 +1,52 @@
 # Session Bootstrap Template
 
-Use this file to convert the initial answers into the first live project package.
+このファイルは、初期質問の回答を最初の live project package に変換するためのルールです。
 
-## Inputs
+## 入力
 
 - `bootstrap/project-type-router.md`
-- matching file under `bootstrap/questions/`
-- matching file under `bootstrap/output-templates/`
+- 対応する `bootstrap/questions/` の質問ファイル
+- 対応する `bootstrap/output-templates/` の出力テンプレート
 - `bootstrap/initial-answers.md`
 - `PROJECT_sample.md`
-- files under `samples/`
+- `samples/` 配下の `_sample` ファイル
 
-## Outputs
+## 出力
 
 - `PROJECT.md`
 - `CURRENT_STATE.md`
 - `STATUS.md`
 - `plans/meeting-notes/<date>-kickoff.md`
 - `issues/backlog.md`
-- first live spec under `specs/features/` or equivalent project work package
+- `specs/features/` 配下の最初の spec、または同等の作業単位定義
 
-## Transformation Rules
+## 変換ルール
 
-- `_sample` files are examples only and must not become the canonical source of truth
-- prefer concise, project-specific wording over generic placeholders
-- unresolved choices must be copied into `Open Questions` in `PROJECT.md`
-- if the project type is not `game`, adapt feature terminology to the domain
-- select the active role set from `config/agents.yaml#project_type_profiles`
+- `_sample` ファイルは見本であり、正本にしてはいけない
+- 汎用文よりも、案件固有で短い表現を優先する
+- 未解決事項は `PROJECT.md` の `Open Questions` に残す
+- `game` 以外では用語をその領域に合わせて読み替える
+- `test_plan` の場合は、テスト対象、読者、品質判断材料、工程範囲を最優先で抜き出す
+- active role set は `config/agents.yaml#project_type_profiles` から選ぶ
 
-## Required Extraction
+## 必須で抜き出す項目
 
 - project type
-- title
-- pitch
-- primary goal
-- main deliverable
-- first milestone
-- top risks
-- top open decisions
-- initial role selection
+- タイトル
+- 一言説明
+- 主目的
+- 主成果物
+- 最初のマイルストーン
+- 主要リスク
+- 主な未決定事項
+- 最初に使う role
 
-## Kickoff Meeting Minimum Content
+## kickoff meeting に最低限含めるもの
 
-- decision question
-- shared goal
-- options considered
-- advisor positions
+- 判断したい問い
+- 共通目標
+- 検討した選択肢
+- advisor の主張
 - human input
-- decision
-- next actions
+- 決定
+- 次アクション

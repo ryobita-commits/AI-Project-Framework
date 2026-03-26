@@ -1,25 +1,27 @@
 # Project Type Router
 
-Ask this first:
+最初に次を聞きます。
 
-`What are you trying to create?`
+`何を作ろうとしていますか。`
 
-Classify the answer into one of:
+回答を以下のいずれかに分類します。
 
 - `game`
 - `web_app`
 - `mobile_app`
+- `test_plan`
 - `planning_workshop`
 - `sales_plan`
 - `general_project`
 
-Then load the corresponding question file from `bootstrap/questions/`.
+判定後、対応する `bootstrap/questions/` 配下の質問ファイルを読みます。
 
-## Routing Hints
+## 判定の目安
 
-- If the answer mentions gameplay, players, engine, level design, or combat, route to `game.md`.
-- If the answer mentions browser product, SaaS, dashboard, website, or web frontend, route to `web_app.md`.
-- If the answer mentions iOS, Android, app store, or smartphone UX, route to `mobile_app.md`.
-- If the answer focuses on decision making, alignment, or internal strategy sessions, route to `planning_workshop.md`.
-- If the answer focuses on leads, pipeline, territory, sales targets, or account strategy, route to `sales_plan.md`.
-- Otherwise route to `general_project.md`.
+- gameplay、player、engine、level design、combat などが出るなら `game`
+- browser product、SaaS、dashboard、website、frontend なら `web_app`
+- iOS、Android、app store、smartphone なら `mobile_app`
+- テスト計画書、テスト方針、試験計画、品質評価、試験仕様の準備が中心なら `test_plan`
+- 会議設計、論点整理、意思決定、合意形成が中心なら `planning_workshop`
+- 営業戦略、パイプライン、売上計画、顧客戦略が中心なら `sales_plan`
+- 上記のどれでもなければ `general_project`

@@ -1,27 +1,27 @@
 # Framework Status
 
-## Scope
+## 現在の範囲
 
-Reusable AI-assisted project framework with role contracts, governance, bootstrap routing, and sample artifacts.
+役割契約、governance、bootstrap、改善ループ、サンプル成果物を含む、再利用可能な AI プロジェクト推進 framework。
 
-## Ready
+## 整備済み
 
-- Repository structure
-- Bootstrap routing and question sets
-- PM council model
-- Role contracts
-- Governance and authority config
-- Feedback loop templates
-- Sample project artifacts
-- GitHub contribution templates
-- Project-type-specific bootstrap output templates
+- リポジトリ構造
+- bootstrap のルーティングと初期質問
+- PM council モデル
+- role contract
+- governance と authority 設定
+- feedback loop テンプレート
+- project type ごとの output template
+- test_plan 向け bootstrap と成果物テンプレート
+- GitHub 用 contribution template
 
-## Remaining Manual Decisions
+## まだ手で決めること
 
-- Repository name
-- Default GitHub Actions behavior
-- Whether to publish as a template repository or copy manually
+- この framework を template repository として公開するか
+- 既定の GitHub Actions をどうするか
+- 初回利用時にどこまで日本語テンプレートを既定化するか
 
-## Recommended Next Step
+## 推奨する次の一手
 
-Review the default GitHub Actions behavior and publish the framework repository before creating the first real project.
+実案件をもう 1 件通し、bootstrap と改善ループの両方を検証する。

@@ -1,5 +1,13 @@
-# Output Templates
+# 出力テンプレート
 
-These templates describe the first live files that should exist after bootstrap for each project type.
+ここには、bootstrap 後に最初に揃えるべき live ファイルの構成例を置きます。
 
-Use them after the initial questions are answered and before detailed execution begins.
+## 使い方
+
+- 初期質問に答えた後に確認する
+- `PROJECT.md`、`CURRENT_STATE.md`、`STATUS.md` に加えて、案件種別ごとの最初の成果物を決める
+- 詳細実行に入る前の最低構成として使う
+
+## 備考
+
+`test_plan` では、通常の spec に加えてテスト計画書アウトラインや本文ドラフトを早い段階で持つ運用を推奨します。

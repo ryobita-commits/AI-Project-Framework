@@ -1,42 +1,42 @@
-# Initial Answers
+# 初期回答
 
 ## Project Type
 
-- Selected type:
-- Why this type fits:
+- 選択した種別:
+- この種別が合う理由:
 
-## Core Answers
+## 質問への回答
 
-1. Answer:
-2. Answer:
-3. Answer:
-4. Answer:
-5. Answer:
-6. Answer:
-7. Answer:
-8. Answer:
-9. Answer:
-10. Answer:
+1. 回答:
+2. 回答:
+3. 回答:
+4. 回答:
+5. 回答:
+6. 回答:
+7. 回答:
+8. 回答:
+9. 回答:
+10. 回答:
 
-## Structured Extraction
+## 抽出結果
 
-- Working title:
-- One-line pitch:
-- Primary goal:
-- Primary user or stakeholder:
-- Main deliverable:
-- First milestone or MVP:
-- Success metrics:
-- Constraints:
-- Open decisions:
+- 仮タイトル:
+- 一言説明:
+- 主目的:
+- 主な利用者または利害関係者:
+- 主成果物:
+- 最初のマイルストーンまたは初稿:
+- 成功条件:
+- 制約:
+- 未決定事項:
 
-## Routing Decisions
+## 役割ルーティング
 
-- Advisor set to use:
-- Roles that are definitely needed:
-- Roles that are probably not needed:
-- Human approvals likely required:
+- 使う advisor set:
+- 確実に必要な role:
+- おそらく不要な role:
+- 人間承認が必要そうな項目:
 
-## Notes
+## 補足
 
-- Additional context:
+- 追加情報:

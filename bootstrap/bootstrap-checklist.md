@@ -1,37 +1,37 @@
-# Bootstrap Checklist
+# bootstrap チェックリスト
 
-Use this checklist after the initial questions are answered.
+初期質問の回答が揃ったら、この順で進めます。
 
-## Step 1: Identify The Project Type
+## 1. Project Type を確定する
 
-- Confirm the result from `bootstrap/project-type-router.md`
-- Record it in `bootstrap/initial-answers.md`
-- Copy the project type into `PROJECT.md`
+- `bootstrap/project-type-router.md` の判定結果を確定する
+- 結果を `bootstrap/initial-answers.md` に記録する
+- `PROJECT.md` に project type を反映する
 
-## Step 2: Create The First Canonical Files
+## 2. 最初の canonical file を作る
 
-- Fill `PROJECT.md`
-- Update `CURRENT_STATE.md`
-- Update `STATUS.md`
-- Create the first meeting note from `templates/meeting-note.md`
-- Check the matching file under `bootstrap/output-templates/`
+- `PROJECT.md` を埋める
+- `CURRENT_STATE.md` を更新する
+- `STATUS.md` を更新する
+- `templates/meeting-note.md` から最初の meeting note を作る
+- `bootstrap/output-templates/` の該当ファイルを確認する
 
-## Step 3: Create The First Planning Outputs
+## 3. 最初の計画成果物を作る
 
-- Create the first backlog items in `issues/backlog.md`
-- Create the first change request if a major decision is needed
-- Create the first feature or work-package spec
+- `issues/backlog.md` に最初の backlog を作る
+- 大きな判断が必要なら最初の change request を作る
+- 最初の spec または work package を作る
 
-## Step 4: Tailor The Framework
+## 4. framework を案件に合わせる
 
-- Confirm whether `server_dev` is needed
-- Confirm whether release and QA roles are needed immediately
-- Confirm PM council composition
-- Confirm approval thresholds
-- Confirm the active role profile from `config/agents.yaml`
+- `server_dev` が必要か確認する
+- QA と release role が今すぐ必要か確認する
+- PM council の構成を確認する
+- 承認しきい値を確認する
+- `config/agents.yaml` の `project_type_profiles` から active role set を選ぶ
 
-## Step 5: Prepare Automation Surface
+## 5. 自動化とテンプレートを整える
 
-- Replace `_sample` files with project-specific live files where needed
-- Replace `.github/workflows/ci_sample.yml` with real checks if automation is required
-- Add ADRs when decisions become binding
+- `_sample` ファイルは見本と割り切り、live ファイルに置き換える
+- 自動化が必要なら `.github/workflows/ci_sample.yml` を実運用 CI に差し替える
+- 判断が拘束力を持ち始めたら ADR を追加する

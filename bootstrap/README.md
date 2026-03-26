@@ -1,21 +1,27 @@
-# Bootstrap
+# bootstrap
 
-This folder contains the routing logic and question sets used to initialize a new project.
+このフォルダは、新しいプロジェクトを起動するための入口です。
 
-## Flow
+## 基本フロー
 
-1. Ask what kind of project the user wants to run.
-2. Select the matching question set.
-3. Record the answers in `bootstrap/initial-answers.md`.
-4. Use `bootstrap/bootstrap-checklist.md` and `bootstrap/session-bootstrap_template.md` to produce the first live files.
-5. Use samples under `samples/` when concrete examples are helpful.
+1. 何を作るかを確認する
+2. `bootstrap/project-type-router.md` で project type を決める
+3. 対応する質問ファイルに沿って情報を集める
+4. 回答を `bootstrap/initial-answers.md` に記録する
+5. `bootstrap/bootstrap-checklist.md` と `bootstrap/session-bootstrap_template.md` に従って最初の live ファイルを作る
+6. 必要なら `samples/` の `_sample` ファイルを参照する
 
-## Core Files
+## 主なファイル
 
-- `project-type-router.md`: classifies the project
-- `questions/`: project-type-specific starting questions
-- `initial-answers.md`: stores the first answer set
-- `bootstrap-checklist.md`: defines the initialization sequence
-- `session-bootstrap_template.md`: defines how answers become canonical files
-- `session-bootstrap_sample.md`: concrete example of a successful bootstrap
-- `output-templates/`: recommended first live files by project type
+- `project-type-router.md`: project type の判定ルール
+- `questions/`: 種別ごとの初期質問
+- `initial-answers.md`: 初期質問の回答整理
+- `bootstrap-checklist.md`: 起動手順のチェックリスト
+- `session-bootstrap_template.md`: 回答を正本ファイルに変換するルール
+- `session-bootstrap_sample.md`: 起動例
+- `output-templates/`: 種別ごとの推奨初期成果物
+
+## 追加された project type
+
+`test_plan` を正式追加しています。  
+テスト計画書、テスト方針整理、システムテスト仕様書準備などの案件は、まず `test_plan` を選ぶと運用しやすいです。

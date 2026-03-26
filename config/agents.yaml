@@ -437,6 +437,17 @@ project_type_profiles:
       - "qa_planner"
       - "test_automation"
       - "release_manager"
+  test_plan:
+    required_roles:
+      - "product_director"
+      - "pm_triage"
+      - "pm_moderator"
+      - "solution_designer"
+      - "qa_planner"
+    optional_roles:
+      - "pm_critic"
+      - "pm_advocate"
+      - "pm_analyst"
   planning_workshop:
     required_roles:
       - "product_director"
