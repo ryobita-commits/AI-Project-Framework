@@ -1,0 +1,380 @@
+version: 1
+
+defaults:
+  execution_mode: "spec-first"
+  planning_mode: "issue-driven"
+  log_format: "markdown"
+  require_session_report: true
+  require_feedback_record_for_findings: true
+  meeting_mode: "pm-led multi-advisor"
+  context_bootstrap_files:
+    - "README.md"
+    - "PROJECT.md"
+    - "CURRENT_STATE.md"
+    - "STATUS.md"
+    - "WORKFLOW.md"
+    - "governance/source-of-truth.md"
+    - "config/agents.yaml"
+    - "config/authority.yaml"
+    - "config/workflows.yaml"
+    - "agents/AGENTS_INDEX.md"
+    - "agents/shared/conventions.md"
+    - "agents/shared/definition-of-done.md"
+
+providers:
+  openai:
+    api_style: "responses"
+    notes: "Best default for agentic game development workflows."
+  anthropic:
+    api_style: "messages"
+    notes: "Useful as a review or writing-heavy fallback."
+  google:
+    api_style: "gemini"
+    notes: "Useful for very long-context analysis."
+
+models:
+  openai_gpt_5_4:
+    provider: "openai"
+    model: "gpt-5.4"
+    snapshot: "gpt-5.4-2026-03-05"
+    strengths:
+      - "agentic coding"
+      - "tool use"
+      - "planning"
+      - "long-running implementation tasks"
+  openai_gpt_5_4_pro:
+    provider: "openai"
+    model: "gpt-5.4-pro"
+    strengths:
+      - "highest quality planning"
+      - "high-stakes review"
+      - "complex architecture changes"
+  openai_gpt_5_mini:
+    provider: "openai"
+    model: "gpt-5-mini"
+    strengths:
+      - "low-cost routine execution"
+      - "summaries"
+      - "status normalization"
+  anthropic_claude_sonnet_4:
+    provider: "anthropic"
+    model: "claude-sonnet-4"
+    strengths:
+      - "review"
+      - "writing"
+      - "analysis"
+  google_gemini_2_5_pro:
+    provider: "google"
+    model: "gemini-2.5-pro"
+    strengths:
+      - "very long context"
+      - "cross-document synthesis"
+      - "large design reviews"
+
+roles:
+  product_director:
+    owner_domain: "product"
+    primary_model: "openai_gpt_5_4_pro"
+    fallback_model: "openai_gpt_5_4"
+    reasoning_effort: "high"
+    reads:
+      - "README.md"
+      - "PROJECT.md"
+      - "CURRENT_STATE.md"
+      - "docs/product/**"
+      - "docs/design/**"
+      - "plans/**"
+      - "feedback/**"
+    writes:
+      - "docs/product/**"
+      - "CURRENT_STATE.md"
+      - "plans/**"
+      - "worklog/**"
+    must_not:
+      - "edit runtime code directly"
+      - "skip approval policy"
+
+  pm_triage:
+    owner_domain: "governance"
+    primary_model: "openai_gpt_5_4"
+    fallback_model: "anthropic_claude_sonnet_4"
+    reasoning_effort: "high"
+    reads:
+      - "feedback/**"
+      - "governance/**"
+      - "CURRENT_STATE.md"
+      - "plans/**"
+      - "docs/decisions/**"
+    writes:
+      - "feedback/triaged/**"
+      - "feedback/approved/**"
+      - "feedback/rejected/**"
+      - "plans/change-requests/**"
+      - "worklog/improvements/**"
+    must_not:
+      - "implement fixes directly unless also assigned executor responsibility"
+      - "approve changes above authority threshold"
+
+  pm_moderator:
+    owner_domain: "planning"
+    primary_model: "openai_gpt_5_4_pro"
+    fallback_model: "openai_gpt_5_4"
+    reasoning_effort: "high"
+    persona: "facilitator"
+    meeting_behavior:
+      style: "structured, neutral, decision-focused"
+      goal: "extract positions, surface conflicts, and produce a decision record"
+    reads:
+      - "PROJECT.md"
+      - "CURRENT_STATE.md"
+      - "STATUS.md"
+      - "docs/product/**"
+      - "docs/design/**"
+      - "feedback/**"
+      - "plans/**"
+      - "governance/**"
+    writes:
+      - "plans/meeting-notes/**"
+      - "plans/change-requests/**"
+      - "CURRENT_STATE.md"
+      - "worklog/**"
+    must_not:
+      - "skip advisor review on major planning questions"
+      - "hide dissenting views in meeting notes"
+
+  pm_critic:
+    owner_domain: "planning"
+    primary_model: "anthropic_claude_sonnet_4"
+    fallback_model: "openai_gpt_5_4"
+    reasoning_effort: "high"
+    persona: "critical"
+    meeting_behavior:
+      style: "skeptical, risk-oriented, challenge assumptions"
+      goal: "find hidden failure modes, weak evidence, and operational risks"
+    reads:
+      - "PROJECT.md"
+      - "CURRENT_STATE.md"
+      - "STATUS.md"
+      - "docs/product/**"
+      - "docs/design/**"
+      - "docs/architecture/**"
+      - "feedback/**"
+      - "plans/**"
+    writes:
+      - "plans/meeting-notes/**"
+      - "feedback/inbox/**"
+      - "worklog/**"
+    must_not:
+      - "make the final planning decision"
+
+  pm_advocate:
+    owner_domain: "planning"
+    primary_model: "openai_gpt_5_4"
+    fallback_model: "openai_gpt_5_mini"
+    reasoning_effort: "medium"
+    persona: "constructive"
+    meeting_behavior:
+      style: "positive, opportunity-seeking, action-oriented"
+      goal: "identify upside, momentum, and practical ways to move forward"
+    reads:
+      - "PROJECT.md"
+      - "CURRENT_STATE.md"
+      - "STATUS.md"
+      - "docs/product/**"
+      - "docs/design/**"
+      - "plans/**"
+    writes:
+      - "plans/meeting-notes/**"
+      - "plans/change-requests/**"
+      - "worklog/**"
+    must_not:
+      - "ignore known risks or unresolved blockers"
+
+  pm_analyst:
+    owner_domain: "planning"
+    primary_model: "google_gemini_2_5_pro"
+    fallback_model: "openai_gpt_5_4_pro"
+    reasoning_effort: "high"
+    persona: "analytical"
+    meeting_behavior:
+      style: "evidence-driven, synthetic, comparative"
+      goal: "integrate data, compare alternatives, and clarify tradeoffs"
+    reads:
+      - "PROJECT.md"
+      - "CURRENT_STATE.md"
+      - "STATUS.md"
+      - "docs/product/**"
+      - "docs/design/**"
+      - "docs/architecture/**"
+      - "feedback/**"
+      - "plans/**"
+      - "worklog/**"
+    writes:
+      - "plans/meeting-notes/**"
+      - "plans/change-requests/**"
+      - "worklog/**"
+    must_not:
+      - "override governance decisions"
+
+  game_designer:
+    owner_domain: "design"
+    primary_model: "openai_gpt_5_4"
+    fallback_model: "anthropic_claude_sonnet_4"
+    reasoning_effort: "high"
+    reads:
+      - "PROJECT.md"
+      - "CURRENT_STATE.md"
+      - "docs/product/**"
+      - "specs/**"
+      - "feedback/**"
+    writes:
+      - "docs/design/**"
+      - "specs/features/**"
+      - "worklog/**"
+    must_not:
+      - "modify production code"
+
+  system_architect:
+    owner_domain: "architecture"
+    primary_model: "openai_gpt_5_4_pro"
+    fallback_model: "google_gemini_2_5_pro"
+    reasoning_effort: "high"
+    reads:
+      - "PROJECT.md"
+      - "CURRENT_STATE.md"
+      - "docs/design/**"
+      - "docs/architecture/**"
+      - "specs/**"
+      - "feedback/**"
+    writes:
+      - "docs/architecture/**"
+      - "docs/decisions/**"
+      - "plans/change-requests/**"
+      - "worklog/**"
+    must_not:
+      - "ship code without matching architecture docs"
+
+  client_dev:
+    owner_domain: "client"
+    primary_model: "openai_gpt_5_4"
+    fallback_model: "openai_gpt_5_mini"
+    reasoning_effort: "medium"
+    reads:
+      - "docs/design/**"
+      - "docs/architecture/**"
+      - "specs/features/**"
+      - "plans/change-requests/**"
+      - "feedback/approved/**"
+    writes:
+      - "client/**"
+      - "tests/unit/**"
+      - "tests/integration/**"
+      - "worklog/**"
+    must_not:
+      - "change gameplay intent without design approval"
+
+  server_dev:
+    owner_domain: "server"
+    primary_model: "openai_gpt_5_4"
+    fallback_model: "openai_gpt_5_mini"
+    reasoning_effort: "medium"
+    reads:
+      - "docs/architecture/**"
+      - "specs/features/**"
+      - "plans/change-requests/**"
+      - "feedback/approved/**"
+    writes:
+      - "server/**"
+      - "tests/unit/**"
+      - "tests/integration/**"
+      - "worklog/**"
+    must_not:
+      - "introduce schema changes without decision record"
+
+  qa_planner:
+    owner_domain: "qa"
+    primary_model: "anthropic_claude_sonnet_4"
+    fallback_model: "openai_gpt_5_4"
+    reasoning_effort: "high"
+    reads:
+      - "PROJECT.md"
+      - "docs/design/**"
+      - "docs/architecture/**"
+      - "specs/**"
+      - "plans/**"
+    writes:
+      - "docs/qa/**"
+      - "tests/regression/**"
+      - "worklog/**"
+    must_not:
+      - "change release scope"
+
+  test_automation:
+    owner_domain: "qa"
+    primary_model: "openai_gpt_5_4"
+    fallback_model: "openai_gpt_5_mini"
+    reasoning_effort: "medium"
+    reads:
+      - "docs/qa/**"
+      - "specs/**"
+      - "client/**"
+      - "server/**"
+      - "feedback/**"
+    writes:
+      - "tests/**"
+      - "feedback/inbox/**"
+      - "worklog/**"
+    must_not:
+      - "close issues without verification"
+
+  release_manager:
+    owner_domain: "release"
+    primary_model: "openai_gpt_5_4"
+    fallback_model: "anthropic_claude_sonnet_4"
+    reasoning_effort: "high"
+    reads:
+      - "CURRENT_STATE.md"
+      - "CHANGELOG.md"
+      - "feedback/**"
+      - "plans/**"
+      - "docs/release/**"
+    writes:
+      - "docs/release/**"
+      - "CHANGELOG.md"
+      - "worklog/**"
+    must_not:
+      - "approve unresolved P0 or P1 issues for release"
+
+routing:
+  by_task_type:
+    planning_meeting: "pm_moderator"
+    roadmap_or_scope_change: "product_director"
+    design_or_balance_change: "game_designer"
+    architecture_change: "system_architect"
+    client_feature: "client_dev"
+    server_feature: "server_dev"
+    test_plan: "qa_planner"
+    regression_or_automation_test: "test_automation"
+    release_readiness: "release_manager"
+    triage_or_escalation: "pm_triage"
+  by_issue_type:
+    bug: "pm_triage"
+    design_gap: "pm_triage"
+    spec_ambiguity: "pm_triage"
+    test_gap: "pm_triage"
+    tech_debt: "pm_triage"
+    workflow_improvement: "pm_triage"
+    release_risk: "pm_triage"
+
+meeting_advisors:
+  default_pm_council:
+    moderator: "pm_moderator"
+    advisors:
+      - "pm_critic"
+      - "pm_advocate"
+      - "pm_analyst"
+    human_participation: true
+    output_files:
+      - "plans/meeting-notes/"
+      - "plans/change-requests/"
+      - "worklog/daily/"
