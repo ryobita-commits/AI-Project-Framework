@@ -1,98 +1,98 @@
-# Superpowers Mapping
+# Superpowers 対応表
 
-## Purpose
+## 目的
 
-Map the `obra/superpowers` workflow into this framework so later AI sessions inherit the same operating model.
+`obra/superpowers` のワークフローをこの framework に写像し、後から参加した AI セッションでも同じ運用モデルを継承できるようにする。
 
-## Upstream References
+## 参照元
 
 - Repository: `https://github.com/obra/superpowers`
 - Codex install guide: `https://raw.githubusercontent.com/obra/superpowers/refs/heads/main/.codex/INSTALL.md`
 
-## Mapped Workflow
+## 写像したワークフロー
 
-### 1. Brainstorming -> Design Approval
+### 1. Brainstorming -> 設計承認
 
-- Before implementation, define or refine the design in `docs/product/`, `docs/design/`, or a design spec file.
-- Ask clarifying questions when the request is ambiguous.
-- Present options and tradeoffs before selecting an approach.
-- Do not implement until the design is explicit enough to plan.
+- 実装前に `docs/product/`、`docs/design/`、または設計 spec ファイルで設計を定義または更新する。
+- 依頼内容が曖昧なら確認質問を行う。
+- 方針を決める前に選択肢とトレードオフを提示する。
+- 計画に落とせるだけの明確さが得られるまでは実装しない。
 
-Recommended output:
+推奨出力:
 - `docs/design/<date>-<topic>-design.md`
 
-Template:
+対応テンプレート:
 - `templates/design-spec.md`
 
-### 2. Writing Plans -> Implementation Plan
+### 2. Writing Plans -> 実装計画
 
-- After design approval, write a task-level implementation plan.
-- Use exact file paths, clear ownership, and explicit verification steps.
-- Prefer tasks that can be completed and reviewed independently.
+- 設計承認後に、タスク単位の implementation plan を作る。
+- 正確なファイルパス、明確な owner、具体的な検証手順を含める。
+- できるだけ独立して完了・レビューできるタスクに分解する。
 
-Recommended output:
+推奨出力:
 - `docs/plans/<date>-<topic>-implementation.md`
 
-Template:
+対応テンプレート:
 - `templates/implementation-plan.md`
 
-### 3. Subagent-Driven Development -> Role-Based Execution
+### 3. Subagent-Driven Development -> 役割ベース実行
 
-- Use the role routing in `config/agents.yaml`.
-- When subagents are available, delegate bounded tasks with one owner per task.
-- Review for spec compliance before code quality.
+- `config/agents.yaml` の role routing を使う。
+- subagent が使える環境では、各タスクに owner を 1 人だけ割り当てて委譲する。
+- code quality review の前に spec compliance review を行う。
 
-Primary framework files:
+主に使う framework ファイル:
 - `agents/`
 - `config/agents.yaml`
 - `tasks/todo.md`
 
-### 4. Test-Driven Development -> Required For Behavior Changes
+### 4. Test-Driven Development -> 振る舞い変更時の既定
 
-- For new behavior and bug fixes, write the failing test first when practical.
-- Confirm the test fails for the expected reason.
-- Implement the minimal change.
-- Re-run the focused test, then broader verification.
+- 新しい振る舞い追加や bug fix では、可能な限り最初に failing test を書く。
+- そのテストが想定どおり失敗することを確認する。
+- その後、最小限の修正を実装する。
+- focused test を再実行し、その後に広めの検証を行う。
 
-Primary framework files:
+主に使う framework ファイル:
 - `tests/**`
 - `tasks/todo.md`
 - `templates/implementation-plan.md`
 
-### 5. Requesting Code Review -> Review Gates
+### 5. Requesting Code Review -> レビューゲート
 
-- Run review against spec and plan, not only style.
-- Block completion if critical issues remain open.
-- Record review findings and follow-up actions.
+- style だけでなく、spec と plan に照らして review する。
+- 重大な問題が残っている限り完了扱いにしない。
+- review findings と follow-up actions を記録する。
 
-Recommended output:
+推奨出力:
 - `docs/reviews/<date>-<topic>.md`
 
-Template:
+対応テンプレート:
 - `templates/code-review.md`
 
-### 6. Verification Before Completion -> Done Gate
+### 6. Verification Before Completion -> 完了ゲート
 
-- No completion claim without fresh verification evidence.
-- Verification must include the command or check actually run.
-- Update `tasks/todo.md`, session report, and state files before closing work.
+- fresh な検証証跡なしで完了宣言しない。
+- 検証には、実際に実行した command や check を含める。
+- 作業終了前に `tasks/todo.md`、session report、state file を更新する。
 
-### 7. Systematic Debugging -> Root Cause First
+### 7. Systematic Debugging -> 根本原因優先
 
-- Bug fixing starts with reproduction, evidence gathering, and root-cause analysis.
-- Do not bundle speculative fixes.
-- Add or update regression coverage once the cause is understood.
+- bug fix は再現、証拠収集、root cause 分析から始める。
+- 推測ベースの修正をまとめて入れない。
+- 原因が判明したら回帰防止のテストや検証を追加・更新する。
 
-Recommended output:
+推奨出力:
 - `docs/debug/<date>-<topic>.md`
 
-Template:
+対応テンプレート:
 - `templates/debug-investigation.md`
 
-## Framework Rules Added From Superpowers
+## Superpowers から追加した framework ルール
 
-- No implementation without explicit design or spec context.
-- No non-trivial execution without a written plan.
-- No production fix without root-cause investigation.
-- No completion claim without fresh verification evidence.
-- No large task without decomposition into smaller reviewable steps.
+- 明示された design / spec の文脈なしに実装しない。
+- 書面化された plan なしに非自明な作業を進めない。
+- 根本原因調査なしに production fix を入れない。
+- fresh な検証証跡なしに完了宣言しない。
+- 大きな作業は、レビュー可能な小さい単位へ分解する。

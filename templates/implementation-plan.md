@@ -1,76 +1,76 @@
-# Implementation Plan
+# 実装計画
 
-## Goal
+## 目的
 
-One sentence describing what this plan delivers.
+この計画が何を実現するかを 1 文で書く。
 
-## Design Reference
+## 設計参照
 
 - spec:
-- related decisions:
+- 関連する decision:
 
-## Architecture Summary
+## アーキテクチャ要約
 
-2-3 sentences on the chosen approach.
+採用したアプローチを 2〜3 文でまとめる。
 
-## File Map
+## ファイル構成
 
 - Create:
 - Modify:
 - Verify:
 
-## Tasks
+## タスク一覧
 
-### Task 1: Name
+### タスク 1: 名前
 
-**Owner**
+**担当**
 
 - role:
 
-**Files**
+**対象ファイル**
 
 - Create:
 - Modify:
 - Test:
 
-- [ ] Step 1: Write the failing test
-- [ ] Step 2: Run the test and confirm expected failure
-- [ ] Step 3: Write the minimal implementation
-- [ ] Step 4: Run focused tests and confirm pass
-- [ ] Step 5: Run broader verification
-- [ ] Step 6: Request review against spec and code quality
+- [ ] ステップ 1: failing test を書く
+- [ ] ステップ 2: test を実行して想定どおり失敗することを確認する
+- [ ] ステップ 3: 最小限の実装を書く
+- [ ] ステップ 4: focused test を実行して通ることを確認する
+- [ ] ステップ 5: 広めの検証を行う
+- [ ] ステップ 6: spec 適合と code quality の review を依頼する
 
-### Task 2: Name
+### タスク 2: 名前
 
-**Owner**
+**担当**
 
 - role:
 
-**Files**
+**対象ファイル**
 
 - Create:
 - Modify:
 - Test:
 
-- [ ] Step 1: Write the failing test
-- [ ] Step 2: Run the test and confirm expected failure
-- [ ] Step 3: Write the minimal implementation
-- [ ] Step 4: Run focused tests and confirm pass
-- [ ] Step 5: Run broader verification
-- [ ] Step 6: Request review against spec and code quality
+- [ ] ステップ 1: failing test を書く
+- [ ] ステップ 2: test を実行して想定どおり失敗することを確認する
+- [ ] ステップ 3: 最小限の実装を書く
+- [ ] ステップ 4: focused test を実行して通ることを確認する
+- [ ] ステップ 5: 広めの検証を行う
+- [ ] ステップ 6: spec 適合と code quality の review を依頼する
 
-## Verification Commands
+## 検証コマンド
 
 - command:
 - expected result:
 
-## Risks
+## リスク
 
-- risk and mitigation
+- リスクと対策
 
-## Completion Gate
+## 完了ゲート
 
-- [ ] Design reference is still accurate
-- [ ] TDD steps were followed or exception recorded
-- [ ] Review completed
-- [ ] Verification evidence recorded
+- [ ] 設計参照が現在の実装方針と一致している
+- [ ] TDD の手順を踏んだ、または例外理由を記録した
+- [ ] review が完了している
+- [ ] 検証証跡を記録している

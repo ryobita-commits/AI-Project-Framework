@@ -1,64 +1,64 @@
-# Design Spec
+# 設計仕様書
 
-## Date
+## 日付
 
 YYYY-MM-DD
 
-## Topic
+## テーマ
 
-Short feature or change name
+短い機能名または変更名
 
-## Problem
+## 解決したいこと
 
-What needs to change and why now.
+何を変える必要があり、なぜ今それが必要なのか。
 
-## Context
+## 前提
 
-- current repo or product state
-- relevant constraints
-- success criteria
+- 現在の repo またはプロダクトの状態
+- 関連する制約
+- 成功条件
 
-## Options Considered
+## 検討した選択肢
 
-### Option A
+### 案 A
 
-- approach:
-- upside:
-- downside:
+- アプローチ:
+- 良い点:
+- 悪い点:
 
-### Option B
+### 案 B
 
-- approach:
-- upside:
-- downside:
+- アプローチ:
+- 良い点:
+- 悪い点:
 
-## Recommended Approach
+## 推奨方針
 
-What should be built and why.
+何を作るべきか、なぜその方針を選ぶのか。
 
-## Design
+## 設計内容
 
-### Architecture Or Structure
+### 構造またはアーキテクチャ
 
-Main components, boundaries, and ownership.
+主な構成要素、境界、責任分担。
 
-### Data Or State Flow
+### データまたは状態の流れ
 
-Key inputs, outputs, persistence, and state transitions.
+主な入力、出力、永続化、状態遷移。
 
-### Error Handling
+### エラーハンドリング
 
-Expected failures and how they are surfaced.
+想定される失敗と、その見せ方・扱い方。
 
-### Testing Strategy
+### テスト方針
 
-How the behavior will be verified.
+その振る舞いをどう検証するか。
 
-## Open Questions
+## 未解決事項
 
-- unresolved item
+- 未解決項目
 
-## Approval
+## 承認
 
-- approved_by:
-- approved_on:
+- 承認者:
+- 承認日:

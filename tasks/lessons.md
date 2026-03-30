@@ -1,12 +1,12 @@
-# Lessons
+# 改善ルール
 
-Record rules that should reduce repeated mistakes.
+繰り返しやすいミスを減らすためのルールを記録する。
 
-## Entries
+## 記録一覧
 
-### YYYY-MM-DD - Lesson Title
+### YYYY-MM-DD - ルール名
 
-- Context:
-- Mistake or trigger:
-- Preventive rule:
-- How to apply next time:
+- 背景:
+- ミスまたは発生条件:
+- 予防ルール:
+- 次回の適用方法:

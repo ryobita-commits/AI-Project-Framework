@@ -1,48 +1,48 @@
-# Debug Investigation
+# デバッグ調査記録
 
-## Date
+## 日付
 
 YYYY-MM-DD
 
-## Issue
+## 事象
 
-Short bug title
+短い bug タイトル
 
-## Symptom
+## 症状
 
-What is failing or behaving unexpectedly.
+何が失敗しているか、または何が期待どおりに動いていないか。
 
-## Reproduction
+## 再現条件
 
-- exact steps:
-- frequency:
-- environment:
+- 再現手順:
+- 発生頻度:
+- 環境:
 
-## Evidence
+## 証拠
 
 - error messages:
 - logs:
-- diffs or recent changes:
+- 差分または最近の変更:
 
-## Root Cause Analysis
+## 根本原因分析
 
-What actually caused the issue.
+実際に何が原因だったか。
 
-## Hypothesis Tested
+## 検証した仮説
 
-- hypothesis:
-- minimal test:
-- result:
+- 仮説:
+- 最小テスト:
+- 結果:
 
-## Fix
+## 修正内容
 
-Single root-cause fix that was applied.
+適用した単一の root-cause fix。
 
-## Regression Coverage
+## 回帰防止
 
-- failing test added:
+- failing test の追加:
 - passing verification:
 
-## Remaining Risks
+## 残リスク
 
-- risk
+- リスク

@@ -1,45 +1,45 @@
-# Task Plan
+# タスク計画
 
-## Task
+## タスク情報
 
-- Name:
-- Owner:
-- Date:
-- Design reference:
-- Plan reference:
+- 名前:
+- 担当:
+- 日付:
+- 設計参照:
+- 計画参照:
 
-## Plan
+## 実行計画
 
-- [ ] Step 1
-- [ ] Step 2
-- [ ] Step 3
+- [ ] ステップ 1
+- [ ] ステップ 2
+- [ ] ステップ 3
 
-## TDD Or Execution Notes
+## TDD または実行メモ
 
 - failing test:
-- expected failure reason:
-- minimal implementation note:
-- exception reason if TDD is skipped:
+- 想定している失敗理由:
+- 最小実装の方針:
+- TDD を適用しない場合の理由:
 
-## Verification Plan
+## 検証計画
 
-- [ ] Test or check to run
-- [ ] Diff review to perform
-- [ ] Evidence to capture
+- [ ] 実行する test または check
+- [ ] 確認する diff review
+- [ ] 残す証跡
 
-## Review Gates
+## レビューゲート
 
-- [ ] Spec compliance reviewed
-- [ ] Code quality reviewed
-- [ ] Verification evidence captured
+- [ ] spec 適合レビュー完了
+- [ ] code quality レビュー完了
+- [ ] 検証証跡の記録完了
 
-## Progress Notes
+## 進捗メモ
 
-- YYYY-MM-DD: started
+- YYYY-MM-DD: 着手
 
-## Review
+## レビュー結果
 
-- Result:
-- Tests run:
-- Remaining risks:
-- Follow-up actions:
+- 結果:
+- 実行したテスト:
+- 残課題・残リスク:
+- 次アクション:

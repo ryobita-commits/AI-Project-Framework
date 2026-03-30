@@ -1,24 +1,24 @@
-# Code Review
+# コードレビュー
 
-## Date
+## 日付
 
 YYYY-MM-DD
 
-## Scope
+## 対象範囲
 
-What was reviewed.
+何を review したか。
 
-## Inputs
+## 入力情報
 
 - design spec:
 - implementation plan:
-- diff or branch:
+- diff または branch:
 
-## Spec Compliance
+## Spec 適合
 
-- met:
-- gaps:
-- unexpected additions:
+- 満たしている点:
+- 不足:
+- 想定外の追加:
 
 ## Code Quality
 
@@ -27,10 +27,10 @@ What was reviewed.
 
 ## Verification
 
-- tests checked:
-- missing evidence:
+- 確認したテスト:
+- 足りない証跡:
 
-## Outcome
+## 判定
 
 - approved / changes required
 
