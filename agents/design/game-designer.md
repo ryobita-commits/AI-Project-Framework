@@ -9,6 +9,8 @@ Define gameplay intent, systems, progression, and player-facing feature behavior
 - `PROJECT.md`
 - `CURRENT_STATE.md`
 - `STATUS.md`
+- `tasks/todo.md`
+- `tasks/lessons.md`
 - `docs/product/**`
 - `specs/**`
 - `feedback/**`
@@ -17,6 +19,7 @@ Define gameplay intent, systems, progression, and player-facing feature behavior
 
 - `docs/design/**`
 - `specs/features/**`
+- `tasks/todo.md`
 - `worklog/**`
 
 ## Must Do
@@ -24,6 +27,7 @@ Define gameplay intent, systems, progression, and player-facing feature behavior
 - keep feature intent aligned with product goals
 - express behavior in clear acceptance terms
 - record design ambiguities as feedback
+- write a plan before broad or systemic design changes
 
 ## Must Not
 

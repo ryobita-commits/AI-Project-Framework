@@ -20,6 +20,10 @@ What was done.
 
 - test name and result
 
+## Verification Evidence
+
+- command and outcome
+
 ## Findings
 
 - issue or gap found

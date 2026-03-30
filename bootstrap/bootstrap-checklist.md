@@ -13,12 +13,17 @@
 - `PROJECT.md` を埋める
 - `CURRENT_STATE.md` を更新する
 - `STATUS.md` を更新する
+- `templates/design-spec.md` から最初の design spec を作る
+- `tasks/todo.md` に最初の plan を書く
+- `tasks/lessons.md` を初期化する
 - `templates/meeting-note.md` から最初の meeting note を作る
 - `bootstrap/output-templates/` の該当ファイルを確認する
 
 ## 3. 最初の計画成果物を作る
 
 - `issues/backlog.md` に最初の backlog を作る
+- `templates/implementation-plan.md` から最初の implementation plan を作る
+- `tasks/todo.md` の plan 項目を実行可能な粒度にする
 - 大きな判断が必要なら最初の change request を作る
 - 最初の spec または work package を作る
 

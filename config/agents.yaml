@@ -13,6 +13,9 @@ defaults:
     - "CURRENT_STATE.md"
     - "STATUS.md"
     - "WORKFLOW.md"
+    - "docs/superpowers-mapping.md"
+    - "tasks/todo.md"
+    - "tasks/lessons.md"
     - "governance/source-of-truth.md"
     - "config/agents.yaml"
     - "config/authority.yaml"
@@ -81,6 +84,8 @@ roles:
       - "README.md"
       - "PROJECT.md"
       - "CURRENT_STATE.md"
+      - "tasks/todo.md"
+      - "tasks/lessons.md"
       - "docs/product/**"
       - "docs/design/**"
       - "plans/**"
@@ -88,6 +93,7 @@ roles:
     writes:
       - "docs/product/**"
       - "CURRENT_STATE.md"
+      - "tasks/todo.md"
       - "plans/**"
       - "worklog/**"
     must_not:
@@ -103,6 +109,8 @@ roles:
       - "feedback/**"
       - "governance/**"
       - "CURRENT_STATE.md"
+      - "tasks/todo.md"
+      - "tasks/lessons.md"
       - "plans/**"
       - "docs/decisions/**"
     writes:
@@ -110,6 +118,8 @@ roles:
       - "feedback/approved/**"
       - "feedback/rejected/**"
       - "plans/change-requests/**"
+      - "tasks/todo.md"
+      - "tasks/lessons.md"
       - "worklog/improvements/**"
     must_not:
       - "implement fixes directly unless also assigned executor responsibility"
@@ -128,6 +138,8 @@ roles:
       - "PROJECT.md"
       - "CURRENT_STATE.md"
       - "STATUS.md"
+      - "tasks/todo.md"
+      - "tasks/lessons.md"
       - "docs/product/**"
       - "docs/design/**"
       - "feedback/**"
@@ -137,6 +149,7 @@ roles:
       - "plans/meeting-notes/**"
       - "plans/change-requests/**"
       - "CURRENT_STATE.md"
+      - "tasks/todo.md"
       - "worklog/**"
     must_not:
       - "skip advisor review on major planning questions"
@@ -155,6 +168,8 @@ roles:
       - "PROJECT.md"
       - "CURRENT_STATE.md"
       - "STATUS.md"
+      - "tasks/todo.md"
+      - "tasks/lessons.md"
       - "docs/product/**"
       - "docs/design/**"
       - "docs/architecture/**"
@@ -163,6 +178,8 @@ roles:
     writes:
       - "plans/meeting-notes/**"
       - "feedback/inbox/**"
+      - "tasks/todo.md"
+      - "tasks/lessons.md"
       - "worklog/**"
     must_not:
       - "make the final planning decision"
@@ -180,12 +197,15 @@ roles:
       - "PROJECT.md"
       - "CURRENT_STATE.md"
       - "STATUS.md"
+      - "tasks/todo.md"
+      - "tasks/lessons.md"
       - "docs/product/**"
       - "docs/design/**"
       - "plans/**"
     writes:
       - "plans/meeting-notes/**"
       - "plans/change-requests/**"
+      - "tasks/todo.md"
       - "worklog/**"
     must_not:
       - "ignore known risks or unresolved blockers"
@@ -203,6 +223,8 @@ roles:
       - "PROJECT.md"
       - "CURRENT_STATE.md"
       - "STATUS.md"
+      - "tasks/todo.md"
+      - "tasks/lessons.md"
       - "docs/product/**"
       - "docs/design/**"
       - "docs/architecture/**"
@@ -212,6 +234,7 @@ roles:
     writes:
       - "plans/meeting-notes/**"
       - "plans/change-requests/**"
+      - "tasks/todo.md"
       - "worklog/**"
     must_not:
       - "override governance decisions"
@@ -224,12 +247,15 @@ roles:
     reads:
       - "PROJECT.md"
       - "CURRENT_STATE.md"
+      - "tasks/todo.md"
+      - "tasks/lessons.md"
       - "docs/product/**"
       - "specs/**"
       - "feedback/**"
     writes:
       - "docs/design/**"
       - "specs/features/**"
+      - "tasks/todo.md"
       - "worklog/**"
     must_not:
       - "modify production code"
@@ -244,12 +270,15 @@ roles:
     reads:
       - "PROJECT.md"
       - "CURRENT_STATE.md"
+      - "tasks/todo.md"
+      - "tasks/lessons.md"
       - "docs/product/**"
       - "specs/**"
       - "feedback/**"
     writes:
       - "docs/design/**"
       - "specs/features/**"
+      - "tasks/todo.md"
       - "worklog/**"
     must_not:
       - "modify production code"
@@ -262,6 +291,8 @@ roles:
     reads:
       - "PROJECT.md"
       - "CURRENT_STATE.md"
+      - "tasks/todo.md"
+      - "tasks/lessons.md"
       - "docs/design/**"
       - "docs/architecture/**"
       - "specs/**"
@@ -270,6 +301,7 @@ roles:
       - "docs/architecture/**"
       - "docs/decisions/**"
       - "plans/change-requests/**"
+      - "tasks/todo.md"
       - "worklog/**"
     must_not:
       - "ship code without matching architecture docs"
@@ -280,6 +312,8 @@ roles:
     fallback_model: "openai_gpt_5_mini"
     reasoning_effort: "medium"
     reads:
+      - "tasks/todo.md"
+      - "tasks/lessons.md"
       - "docs/design/**"
       - "docs/architecture/**"
       - "specs/features/**"
@@ -289,6 +323,8 @@ roles:
       - "client/**"
       - "tests/unit/**"
       - "tests/integration/**"
+      - "tasks/todo.md"
+      - "tasks/lessons.md"
       - "worklog/**"
     must_not:
       - "change gameplay intent without design approval"
@@ -299,6 +335,8 @@ roles:
     fallback_model: "openai_gpt_5_mini"
     reasoning_effort: "medium"
     reads:
+      - "tasks/todo.md"
+      - "tasks/lessons.md"
       - "docs/architecture/**"
       - "specs/features/**"
       - "plans/change-requests/**"
@@ -307,6 +345,8 @@ roles:
       - "server/**"
       - "tests/unit/**"
       - "tests/integration/**"
+      - "tasks/todo.md"
+      - "tasks/lessons.md"
       - "worklog/**"
     must_not:
       - "introduce schema changes without decision record"
@@ -318,6 +358,8 @@ roles:
     reasoning_effort: "high"
     reads:
       - "PROJECT.md"
+      - "tasks/todo.md"
+      - "tasks/lessons.md"
       - "docs/design/**"
       - "docs/architecture/**"
       - "specs/**"
@@ -325,6 +367,7 @@ roles:
     writes:
       - "docs/qa/**"
       - "tests/regression/**"
+      - "tasks/todo.md"
       - "worklog/**"
     must_not:
       - "change release scope"
@@ -336,6 +379,8 @@ roles:
     reasoning_effort: "medium"
     reads:
       - "docs/qa/**"
+      - "tasks/todo.md"
+      - "tasks/lessons.md"
       - "specs/**"
       - "client/**"
       - "server/**"
@@ -343,6 +388,8 @@ roles:
     writes:
       - "tests/**"
       - "feedback/inbox/**"
+      - "tasks/todo.md"
+      - "tasks/lessons.md"
       - "worklog/**"
     must_not:
       - "close issues without verification"
@@ -354,6 +401,8 @@ roles:
     reasoning_effort: "high"
     reads:
       - "CURRENT_STATE.md"
+      - "tasks/todo.md"
+      - "tasks/lessons.md"
       - "CHANGELOG.md"
       - "feedback/**"
       - "plans/**"
@@ -361,6 +410,7 @@ roles:
     writes:
       - "docs/release/**"
       - "CHANGELOG.md"
+      - "tasks/todo.md"
       - "worklog/**"
     must_not:
       - "approve unresolved P0 or P1 issues for release"

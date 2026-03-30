@@ -13,7 +13,7 @@
 
 ## Working Title
 
-- Title: TBD
+- Title: AI-Project-Framework
 
 ## One-Line Pitch
 

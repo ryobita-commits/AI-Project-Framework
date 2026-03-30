@@ -50,6 +50,16 @@ role-name
 
 - tests or review steps
 
+## Design And Plan References
+
+- design spec:
+- implementation plan:
+
+## Review Gate
+
+- spec compliance review required: yes / no
+- code quality review required: yes / no
+
 ## Status
 
 draft / approved / rejected / implemented

@@ -4,6 +4,8 @@
 
 This file lists all agent roles and the order in which they should be involved.
 
+Every agent should bootstrap with `README.md`, `WORKFLOW.md`, `docs/superpowers-mapping.md`, `tasks/todo.md`, `tasks/lessons.md`, and the shared conventions before acting.
+
 ## Product And Planning
 
 - `product_director`: owns product direction, priorities, and milestone framing

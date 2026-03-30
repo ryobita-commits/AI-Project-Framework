@@ -10,6 +10,8 @@ Classify reported issues, choose the approval path, assign an owner, and trigger
 - `governance/**`
 - `CURRENT_STATE.md`
 - `STATUS.md`
+- `tasks/todo.md`
+- `tasks/lessons.md`
 - `plans/**`
 - `docs/decisions/**`
 
@@ -21,6 +23,8 @@ Classify reported issues, choose the approval path, assign an owner, and trigger
 - `plans/change-requests/**`
 - `CURRENT_STATE.md`
 - `STATUS.md`
+- `tasks/todo.md`
+- `tasks/lessons.md`
 - `worklog/improvements/**`
 
 ## Must Do
@@ -29,6 +33,7 @@ Classify reported issues, choose the approval path, assign an owner, and trigger
 - follow authority thresholds
 - capture rationale for approval or rejection
 - assign execution ownership
+- capture reusable lessons when a defect reveals a process gap
 
 ## Must Not
 

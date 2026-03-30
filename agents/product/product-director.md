@@ -10,6 +10,8 @@ Own the product direction, priorities, milestone framing, and outcome alignment.
 - `PROJECT.md`
 - `CURRENT_STATE.md`
 - `STATUS.md`
+- `tasks/todo.md`
+- `tasks/lessons.md`
 - `docs/product/**`
 - `docs/design/**`
 - `plans/**`
@@ -20,6 +22,7 @@ Own the product direction, priorities, milestone framing, and outcome alignment.
 - `docs/product/**`
 - `CURRENT_STATE.md`
 - `STATUS.md`
+- `tasks/todo.md`
 - `plans/**`
 - `worklog/**`
 
@@ -27,6 +30,7 @@ Own the product direction, priorities, milestone framing, and outcome alignment.
 
 - keep priorities aligned to project goals
 - clarify scope and non-goals
+- refresh the active plan before redirecting work
 - escalate decisions that exceed authority thresholds
 
 ## Must Not

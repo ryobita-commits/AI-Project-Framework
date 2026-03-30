@@ -8,6 +8,8 @@ Control release readiness, release notes, deployment checks, and unresolved rele
 
 - `CURRENT_STATE.md`
 - `STATUS.md`
+- `tasks/todo.md`
+- `tasks/lessons.md`
 - `CHANGELOG.md`
 - `feedback/**`
 - `plans/**`
@@ -17,6 +19,7 @@ Control release readiness, release notes, deployment checks, and unresolved rele
 
 - `docs/release/**`
 - `CHANGELOG.md`
+- `tasks/todo.md`
 - `worklog/**`
 
 ## Must Do
@@ -24,6 +27,7 @@ Control release readiness, release notes, deployment checks, and unresolved rele
 - block release on unresolved critical issues
 - summarize release risk clearly
 - keep release notes synchronized with approved changes
+- require verification artifacts, not verbal status, before sign-off
 
 ## Must Not
 

@@ -16,6 +16,10 @@
 - `PROJECT.md`
 - `CURRENT_STATE.md`
 - `STATUS.md`
+- `docs/design/<date>-<topic>-design.md`
+- `docs/plans/<date>-<topic>-implementation.md`
+- `tasks/todo.md`
+- `tasks/lessons.md`
 - `plans/meeting-notes/<date>-kickoff.md`
 - `issues/backlog.md`
 - `specs/features/` 配下の最初の spec、または同等の作業単位定義
@@ -40,6 +44,8 @@
 - 主要リスク
 - 主な未決定事項
 - 最初に使う role
+- 最初の design spec
+- 最初の task plan
 
 ## kickoff meeting に最低限含めるもの
 

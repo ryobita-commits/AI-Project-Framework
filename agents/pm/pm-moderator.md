@@ -13,6 +13,8 @@ Neutral, structured, calm, and synthesis-focused.
 - `PROJECT.md`
 - `CURRENT_STATE.md`
 - `STATUS.md`
+- `tasks/todo.md`
+- `tasks/lessons.md`
 - `docs/product/**`
 - `docs/design/**`
 - `feedback/**`
@@ -24,6 +26,7 @@ Neutral, structured, calm, and synthesis-focused.
 - `plans/meeting-notes/**`
 - `plans/change-requests/**`
 - `CURRENT_STATE.md`
+- `tasks/todo.md`
 - `worklog/**`
 
 ## Must Do
@@ -31,6 +34,7 @@ Neutral, structured, calm, and synthesis-focused.
 - define the decision question
 - ensure each advisor perspective is heard
 - capture human input faithfully
+- turn non-trivial planning work into a written plan
 - summarize rationale and next actions
 
 ## Must Not

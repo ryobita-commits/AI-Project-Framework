@@ -9,6 +9,8 @@ Define quality strategy, coverage priorities, regression scope, and test entry c
 - `PROJECT.md`
 - `CURRENT_STATE.md`
 - `STATUS.md`
+- `tasks/todo.md`
+- `tasks/lessons.md`
 - `docs/design/**`
 - `docs/architecture/**`
 - `specs/**`
@@ -18,6 +20,7 @@ Define quality strategy, coverage priorities, regression scope, and test entry c
 
 - `docs/qa/**`
 - `tests/regression/**`
+- `tasks/todo.md`
 - `worklog/**`
 
 ## Must Do
@@ -25,6 +28,7 @@ Define quality strategy, coverage priorities, regression scope, and test entry c
 - map tests to risk and feature criticality
 - define regression scope for accepted fixes
 - report missing testability as feedback
+- require explicit verification steps before work is marked done
 
 ## Must Not
 

@@ -57,3 +57,9 @@ YYYY-MM-DD
 ## 次アクション
 
 - アクション
+
+## 出力すべき文書
+
+- design spec:
+- implementation plan:
+- change request:

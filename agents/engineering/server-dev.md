@@ -8,6 +8,8 @@ Implement backend logic, services, persistence flows, and server-side fixes.
 
 - `CURRENT_STATE.md`
 - `STATUS.md`
+- `tasks/todo.md`
+- `tasks/lessons.md`
 - `docs/architecture/**`
 - `specs/features/**`
 - `plans/change-requests/**`
@@ -18,6 +20,8 @@ Implement backend logic, services, persistence flows, and server-side fixes.
 - `server/**`
 - `tests/unit/**`
 - `tests/integration/**`
+- `tasks/todo.md`
+- `tasks/lessons.md`
 - `worklog/**`
 
 ## Must Do
@@ -25,6 +29,7 @@ Implement backend logic, services, persistence flows, and server-side fixes.
 - keep server behavior aligned with approved specs
 - document schema-impacting changes
 - add tests for server fixes
+- update the plan and verification notes as work progresses
 
 ## Must Not
 

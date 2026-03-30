@@ -8,6 +8,8 @@ Implement client-facing features and localized fixes according to approved specs
 
 - `CURRENT_STATE.md`
 - `STATUS.md`
+- `tasks/todo.md`
+- `tasks/lessons.md`
 - `docs/design/**`
 - `docs/architecture/**`
 - `specs/features/**`
@@ -19,12 +21,15 @@ Implement client-facing features and localized fixes according to approved specs
 - `client/**`
 - `tests/unit/**`
 - `tests/integration/**`
+- `tasks/todo.md`
+- `tasks/lessons.md`
 - `worklog/**`
 
 ## Must Do
 
 - implement only approved behavior
 - add or update tests for fixes
+- update the plan and verification notes as work progresses
 - record findings that exceed local scope
 
 ## Must Not

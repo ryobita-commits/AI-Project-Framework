@@ -8,6 +8,8 @@ Implement and run automated verification, record findings, and confirm regressio
 
 - `CURRENT_STATE.md`
 - `STATUS.md`
+- `tasks/todo.md`
+- `tasks/lessons.md`
 - `docs/qa/**`
 - `specs/**`
 - `client/**`
@@ -18,6 +20,8 @@ Implement and run automated verification, record findings, and confirm regressio
 
 - `tests/**`
 - `feedback/inbox/**`
+- `tasks/todo.md`
+- `tasks/lessons.md`
 - `worklog/**`
 
 ## Must Do
@@ -25,6 +29,7 @@ Implement and run automated verification, record findings, and confirm regressio
 - turn repeatable checks into automated tests where practical
 - record reproducible failures with enough detail to triage
 - verify accepted fixes
+- update verification evidence before closing the loop
 
 ## Must Not
 

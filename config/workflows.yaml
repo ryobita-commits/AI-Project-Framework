@@ -1,5 +1,20 @@
 version: 1
 
+superpowers_alignment:
+  adopted_from:
+    - "brainstorming"
+    - "writing-plans"
+    - "subagent-driven-development"
+    - "test-driven-development"
+    - "requesting-code-review"
+    - "verification-before-completion"
+    - "systematic-debugging"
+  mapping_doc: "docs/superpowers-mapping.md"
+  required_outputs:
+    - "design spec for non-trivial changes"
+    - "implementation plan for non-trivial execution"
+    - "verification evidence before completion"
+
 feedback_loop:
   phases:
     - "detect"
@@ -60,9 +75,13 @@ feedback_loop:
   implement:
     actor_selection: "config/agents.yaml#routing"
     rules:
+      - "design or spec context must exist before implementation"
+      - "tasks/todo.md must be created or refreshed before implementation"
+      - "non-trivial work should have an implementation plan under docs/plans/ or equivalent"
       - "implementation must reference approved change request"
       - "session report is mandatory"
       - "tests must be added or updated for every accepted bug fix"
+      - "TDD is the default for behavior changes when practical"
 
   verify:
     actor: "test_automation"
@@ -70,11 +89,14 @@ feedback_loop:
       - "verification result"
       - "regression status"
       - "remaining risks"
+      - "tasks/todo.md review section updated"
+      - "fresh command evidence for completion claims"
 
   close:
     done_when:
       - "fix merged or proposal rejected"
       - "verification completed when implementation happened"
+      - "tasks/lessons.md updated when reusable lessons were found"
       - "worklog/improvements entry added"
       - "feedback item moved to approved, implemented, rejected, or archived"
 
@@ -83,6 +105,9 @@ logging:
     - "worklog/daily/"
     - "worklog/improvements/"
     - "docs/decisions/"
+    - "docs/superpowers-mapping.md"
+    - "tasks/todo.md"
+    - "tasks/lessons.md"
   session_report_sections:
     - "summary"
     - "files_changed"
